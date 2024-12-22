@@ -4,7 +4,7 @@ import Navigation from './components/Navigation/Navigation.jsx'
 function App() {
   return (
     <div>
-       <Navigation></Navigation>
+       <Navigation/>
     </div>
      
   )
