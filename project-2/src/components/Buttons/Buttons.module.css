@@ -1,0 +1,16 @@
+.primary_button {
+    padding: 10px 6px;
+    border-radius: 5px;
+    background: #000;
+    color: #FFF;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    min-width: 220px;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    justify-content: center;
+
+
+}
