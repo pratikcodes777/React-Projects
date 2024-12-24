@@ -47,3 +47,10 @@
     background: white;
     padding: 0 10px;
 }
+
+.output{
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    color: rgb(53, 0, 243);
+    font-weight: 300;
+}

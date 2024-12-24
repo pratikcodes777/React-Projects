@@ -3,12 +3,26 @@ import Buttons from '../Buttons/Buttons';
 import { MdMessage } from "react-icons/md";
 import { MdCall } from "react-icons/md";
 import { MdOutlineMessage } from "react-icons/md";
+import { useState } from 'react';
 
 
 const ContactForm = () => {
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [text, setText] = useState("")
 
     const onClickCall = () =>{
         console.log("Calling.....")
+    }
+
+    const onSubmit = (e) =>{
+        e.preventDefault()
+        console.log("Name :" , e.target[0].value)
+        console.log("Email :" , e.target[1].value)
+        console.log("Text :" , e.target[2].value)
+        setName(e.target[0].value)
+        setEmail(e.target[1].value)
+        setText(e.target[2].value)
     }
 
 
@@ -26,7 +40,7 @@ const ContactForm = () => {
             icon={<MdOutlineMessage/>}
             /> 
 
-            <form>
+            <form onSubmit={onSubmit}>
             <div className={styles.form_control}>
             <label htmlFor="name">Name</label>
             <input type="text" name='name'/>
@@ -49,6 +63,10 @@ const ContactForm = () => {
                  <Buttons 
             text='SUBMIT' 
             /> 
+            </div>
+
+            <div className={styles.output}>
+                {name+ " " + email +" " + text}
             </div>
            
             </form>
