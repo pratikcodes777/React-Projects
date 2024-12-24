@@ -20,16 +20,38 @@ const ContactForm = () => {
             icon={<MdOutlineMessage/>}
             /> 
 
-        <form>
-           <div className={styles.form_control}>
-           <label htmlFor="name">Name</label>
-           <input type="text" name='name'/>
-           </div>
-        </form>
+            <form>
+            <div className={styles.form_control}>
+            <label htmlFor="name">Name</label>
+            <input type="text" name='name'/>
+            </div>
+
+            <div className={styles.form_control}>
+            <label htmlFor="email">Email</label>
+            <input type="text" name='email'/>
+            </div>
+
+            <div className={styles.form_control}>
+            <label htmlFor="text">Text</label>
+            <textarea type="text" name='text' rows={8}/>
+            </div>
+
+            <div style={{
+                display:"flex",
+                justifyContent:"flex-end"
+                }}>
+                 <Buttons 
+            text='SUBMIT' 
+            /> 
+            </div>
+           
+            </form>
         </div>
 
        
-        <div className={styles.contact_image}></div>
+        <div className={styles.contact_image}>
+            <img src="../public/images/customer.svg" alt="../public/images/customer.svg" />
+        </div>
 
         </section>
         
