@@ -6,13 +6,19 @@ import { MdOutlineMessage } from "react-icons/md";
 
 
 const ContactForm = () => {
+
+    const onClickCall = () =>{
+        console.log("Calling.....")
+    }
+
+
     return ( 
         <section className={styles.container}>
         
         <div className={styles.contact_form}>
             <div className={styles.top_button}>
                 <Buttons text='VIA SUPPORT CHAT' icon={<MdMessage/>}/>
-                <Buttons text='VIA CALL' icon={<MdCall/>}/>
+                <Buttons onClick={onClickCall} text='VIA CALL' icon={<MdCall/>} />
             </div>
             <Buttons 
             isOutline = {true}
@@ -50,7 +56,7 @@ const ContactForm = () => {
 
        
         <div className={styles.contact_image}>
-            <img src="../public/images/customer.svg" alt="../public/images/customer.svg" />
+            <img src="/images/customer.svg" alt="../public/images/customer.svg" />
         </div>
 
         </section>
