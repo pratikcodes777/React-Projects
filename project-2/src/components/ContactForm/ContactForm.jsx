@@ -1,5 +1,8 @@
 import styles from './Contact.module.css'
 import Buttons from '../Buttons/Buttons';
+import { MdMessage } from "react-icons/md";
+
+
 
 
 const ContactForm = () => {
@@ -7,7 +10,8 @@ const ContactForm = () => {
         <section className={styles.container}>
         
         <div className={styles.contact_form}>
-        <Buttons/>
+        <Buttons text='VIA SUPPORT CHAT' icon={<MdMessage/>}/>
+        <Buttons text='VIA CALL' icon={<MdMessage/>}/>
         </div>
         <div className={styles.contact_image}></div>
 
