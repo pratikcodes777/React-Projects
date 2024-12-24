@@ -18,10 +18,17 @@ const ContactForm = () => {
             isOutline = {true}
             text='VIA EMAIL FORM' 
             icon={<MdOutlineMessage/>}
-            />
+            /> 
 
-        
+        <form>
+           <div className={styles.form_control}>
+           <label htmlFor="name">Name</label>
+           <input type="text" name='name'/>
+           </div>
+        </form>
         </div>
+
+       
         <div className={styles.contact_image}></div>
 
         </section>

@@ -14,3 +14,9 @@
     flex-direction: column;
     gap: 25px;
 }
+
+.form_control{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
