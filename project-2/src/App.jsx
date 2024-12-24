@@ -6,9 +6,10 @@ import ContactForm from './components/ContactForm/ContactForm.jsx'
 function App() {
   return (
     <div>
+      
        <Navigation/>
        <main className='main_container'>
-        <ContactHeader></ContactHeader>
+      <ContactHeader></ContactHeader>
        <ContactForm></ContactForm>
        </main>
        
