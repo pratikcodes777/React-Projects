@@ -39,16 +39,6 @@ const data = [
         "question": "What year did the Titanic sink?",
         "answer": "1912"
     },
-    {
-        "id": 9,
-        "question": "What is the hardest natural substance on Earth?",
-        "answer": "Diamond"
-    },
-    {
-        "id": 10,
-        "question": "Which planet is known as the Red Planet?",
-        "answer": "Mars"
-    }
 ]
 
 export default data;

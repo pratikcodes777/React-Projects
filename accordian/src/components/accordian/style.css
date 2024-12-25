@@ -1,0 +1,73 @@
+/* Wrapper styles */
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f9f9f9; /* Light background color */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Accordian container */
+.accordian {
+    width: 90%;
+    max-width: 600px;
+    background-color: #fff; /* White background for the accordian */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    overflow: hidden;
+}
+
+/* Individual item */
+.item {
+    border-bottom: 1px solid #ddd; /* Separator between items */
+    overflow: hidden;
+}
+
+/* Title section */
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    cursor: pointer;
+    background-color: #f7f7f7; /* Light grey background for titles */
+    transition: background-color 0.3s ease;
+}
+
+.title:hover {
+    background-color: #eaeaea; /* Slightly darker background on hover */
+}
+
+/* Title text */
+.title h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333; /* Dark text color */
+}
+
+/* Expand/Collapse indicator */
+.title span {
+    font-size: 1.5rem;
+    color: #888; /* Grey color for icon */
+    transition: transform 0.3s ease;
+}
+
+.title:hover span {
+    color: #000; /* Darker color on hover */
+}
+
+/* Content section */
+.content {
+    padding: 15px 20px;
+    font-size: 1rem;
+    color: #555; /* Neutral grey text */
+    background-color: #fafafa; /* Slightly different background */
+    line-height: 1.6;
+}
+
+/* Add smooth transitions */
+.item .content {
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
