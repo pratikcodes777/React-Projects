@@ -32,11 +32,8 @@ const RandomColor = () => {
     }
 
     useEffect(()=>{
-        if (typeOfColor === 'rgb') {
-            createRgbColor()
-        }else{
-            createHexColor()
-        }
+        if (typeOfColor === 'rgb') createRgbColor();
+        else createHexColor();
     }, [typeOfColor])
 
 
