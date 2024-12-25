@@ -1,27 +1,52 @@
 /* Wrapper styles */
 .wrapper {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     height: 100vh;
-    background-color: #f9f9f9; /* Light background color */
+    width: 100%;
+    background-color: #f4f4f4;
     font-family: 'Arial', sans-serif;
+    padding: 20px;
+}
+
+/* Button styles */
+button {
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+button:focus {
+    outline: none; /* Remove the default focus outline */
 }
 
 /* Accordian container */
 .accordian {
-    width: 90%;
+    width: 100%;
     max-width: 600px;
-    background-color: #fff; /* White background for the accordian */
+    background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
 /* Individual item */
 .item {
-    border-bottom: 1px solid #ddd; /* Separator between items */
-    overflow: hidden;
+    border-bottom: 1px solid #ddd;
 }
 
 /* Title section */
@@ -31,12 +56,12 @@
     align-items: center;
     padding: 15px 20px;
     cursor: pointer;
-    background-color: #f7f7f7; /* Light grey background for titles */
+    background-color: #f7f7f7;
     transition: background-color 0.3s ease;
 }
 
 .title:hover {
-    background-color: #eaeaea; /* Slightly darker background on hover */
+    background-color: #eaeaea;
 }
 
 /* Title text */
@@ -44,30 +69,35 @@
     margin: 0;
     font-size: 1.2rem;
     font-weight: 500;
-    color: #333; /* Dark text color */
+    color: #333;
 }
 
 /* Expand/Collapse indicator */
 .title span {
     font-size: 1.5rem;
-    color: #888; /* Grey color for icon */
+    color: #888;
     transition: transform 0.3s ease;
 }
 
 .title:hover span {
-    color: #000; /* Darker color on hover */
+    color: #000;
 }
 
 /* Content section */
 .content {
     padding: 15px 20px;
     font-size: 1rem;
-    color: #555; /* Neutral grey text */
-    background-color: #fafafa; /* Slightly different background */
+    color: #555;
+    background-color: #fafafa;
     line-height: 1.6;
+    transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
-/* Add smooth transitions */
-.item .content {
-    transition: max-height 0.3s ease, padding 0.3s ease;
+/* Active title for multi-selection or expanded item */
+.title.active {
+    background-color: #dfe7ff; /* Slightly blue background for active state */
+}
+
+.title.active span {
+    transform: rotate(45deg); /* Rotate indicator when active */
 }
