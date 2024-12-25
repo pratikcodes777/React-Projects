@@ -1,9 +1,12 @@
 import './App.css'
+import Accordian from './components/accordian/Accordian'
 
 function App() {
 
   return (
-    <div>Hello world</div>
+    <div>
+      <Accordian></Accordian>
+    </div>
   )
 }
 

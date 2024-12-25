@@ -1,4 +1,4 @@
-const data =[
+const data = [
     {
         "id": 1,
         "question": "What is the capital of France?",
