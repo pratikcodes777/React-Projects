@@ -8,8 +8,8 @@ const StartGame = () => {
             </div>
             
 
-            <div>
-                <Heading>DICE GAME</Heading>
+            <div className="container">
+                <h1>DICE GAME</h1>
                 <Button>Play Now</Button>
                 
             </div>
@@ -25,17 +25,27 @@ const Container = styled.div`
     margin: 0 auto;
     height: 100vh;
     align-items: center;
+    gap: 5px;
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        
+        h1{
+            color: #000;
+            font-family: "Poppins", sans-serif;
+            font-size: 96px;
+            font-weight: 700;
+            white-space: nowrap;
+
+        }
+        Button {
+        align-self: flex-end; 
+    }
+    }
 
 `
 
-const Heading = styled.h1`
-    color: #000;
-    font-family: "Poppins", sans-serif;
-    font-size: 76px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-`
 
 const Button = styled.button`
     min-width: 220px;
@@ -44,4 +54,16 @@ const Button = styled.button`
     background: #000;
     color: white;
     border: none;
+    font-size: 16px;
+    border: 1px solid transparent;
+    transition: 0.4s background ease-in;
+    cursor: pointer;
+
+
+    &:hover{
+        background-color: white;
+        border: 1px solid black;
+        color: black;
+        transition: 0.3s background ease-in;
+    }
 `
