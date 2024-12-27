@@ -6,24 +6,32 @@ import { useState } from "react";
 
 
 const GamePlay = () => {
-    const[totalScore, setTotalScore] = useState()
+    const[totalScore, setTotalScore] = useState(0)
     const [selectedNum, setSelectedNum]= useState()
     const [currentDice, setCurrentDice] = useState(1)
+    console.log(totalScore)
 
     const getRandomNumber = (min, max) => {
         return Math.floor(Math.random() * (max - min) + min);
       }
 
       const rollDice = () =>{
+        if(!selectedNum) return
         const randomNumber = getRandomNumber(1,7)
-
         setCurrentDice((prev)=> randomNumber)
+
+        if(selectedNum === randomNumber){
+            setTotalScore((prev)=> prev + randomNumber)
+        } else{
+            setTotalScore((prev)=> prev - 2)
+        }
+        setSelectedNum(undefined)
       }
 
     return ( 
         <MainContainer>
             <div className="top_section">
-                <TotalScore></TotalScore>
+                <TotalScore totalscore={totalScore}></TotalScore>
                 <NumberSelector 
                 selectedNum={selectedNum}
                 setSelectedNum={setSelectedNum}
