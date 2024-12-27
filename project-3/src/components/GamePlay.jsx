@@ -6,9 +6,19 @@ import { useState } from "react";
 
 
 const GamePlay = () => {
+    const[totalScore, setTotalScore] = useState()
     const [selectedNum, setSelectedNum]= useState()
     const [currentDice, setCurrentDice] = useState(1)
 
+    const getRandomNumber = (min, max) => {
+        return Math.floor(Math.random() * (max - min) + min);
+      }
+
+      const rollDice = () =>{
+        const randomNumber = getRandomNumber(1,7)
+
+        setCurrentDice((prev)=> randomNumber)
+      }
 
     return ( 
         <MainContainer>
@@ -21,7 +31,7 @@ const GamePlay = () => {
             </div>
         <RollDice
         currentDice={currentDice}
-        setCurrentDice= {setCurrentDice}
+        rollDice= {rollDice}
         ></RollDice>
         </MainContainer>
      );

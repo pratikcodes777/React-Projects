@@ -1,18 +1,10 @@
 
 import styled from "styled-components";
 
-const RollDice = ({setCurrentDice, currentDice}) => {
+const RollDice = ({rollDice, currentDice}) => {
 
 
-    const getRandomNumber = (min, max) => {
-        return Math.floor(Math.random() * (max - min) + min);
-      }
 
-      const rollDice = () =>{
-        const randomNumber = getRandomNumber(1,7)
-
-        setCurrentDice((prev)=> randomNumber)
-      }
 
     return ( 
        < DiceContainer>
