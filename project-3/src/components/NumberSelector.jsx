@@ -1,15 +1,23 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 
 const NumberSelector = () => {
+
+    const [selectedNum, setSelectedNum]= useState()
+
     const arrNum = [1,2,3,4,5,6]
     return ( 
         <div>
 
         {arrNum.map((val,i) =>(
-            <Box key={i}>{val}</Box>
+            <Box
+            isselected = {val === selectedNum}
+            onClick={()=>setSelectedNum(val)}
+            key={i}>{val}</Box>
         )
         )}
+        
 
         </div>
      );
@@ -29,5 +37,8 @@ const Box = styled.div`
     font-family: "Poppins";
     font-size: 24px;
     font-weight: 700;
+
+    background-color: ${(props)=> (props.isselected? "black" : "white")};
+    color: ${(props)=> (props.isselected? "#FFF" : "#000")};
 
 `
