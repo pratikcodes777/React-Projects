@@ -1,7 +1,13 @@
 import styled from "styled-components";
 import {Button} from './styled/Button' ;
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 
-const StartGame = ({toggle}) => {
+const StartGame = () => {
+    const navigate = useNavigate();
+
+    const handleStart = () => {
+        navigate('/gameplay'); // Navigate to GamePlay page
+      };
     return ( 
         <Container>
             <div>
@@ -11,7 +17,8 @@ const StartGame = ({toggle}) => {
 
             <div className="container">
                 <h1>DICE GAME</h1>
-                <Button onClick={toggle}>Play Now</Button>
+                {/* <Button onClick={toggle}>Play Now</Button> */}
+                <Button onClick={handleStart}>Play Now</Button>
                 
             </div>
         </Container>
