@@ -8,7 +8,8 @@ const NumberSelector = () => {
 
     const arrNum = [1,2,3,4,5,6]
     return ( 
-        <div>
+        <NumberContainer>
+        <div className="flex">
 
         {arrNum.map((val,i) =>(
             <Box
@@ -17,13 +18,35 @@ const NumberSelector = () => {
             key={i}>{val}</Box>
         )
         )}
-        
-
         </div>
+        <p>Select Number</p>
+        </NumberContainer>
+       
      );
 }
  
 export default NumberSelector;
+
+const NumberContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+    .flex{
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+    p{
+        color: #000;
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+
+    }
+
+    
+`
 
 const Box = styled.div`
     border: 1px solid #000;
