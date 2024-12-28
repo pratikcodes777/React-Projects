@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const BASE_URL = "http://localhost:9000/";
@@ -8,6 +8,8 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+
+ useEffect(()=>{
   const fetchFoodData = async () => {
     setLoading(true);
     try {
@@ -18,9 +20,12 @@ const App = () => {
     } catch (error) {
       setError("Unable to fetch data");
     }
-  };
 
-  // fetchFoodData();
+      fetchFoodData();
+  };  
+ }, [])
+
+ console.log(data)
 
   if (error) return <div>{error}</div>
   if (loading) return <div>Loading.....</div>
