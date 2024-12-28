@@ -14,6 +14,13 @@ const App = () => {
             type="text" />
           </div>
       </TopContainer>
+
+      <FilterContainer>
+        <Button>All</Button>
+        <Button>Breakfast</Button>
+        <Button>Lunch</Button>
+        <Button>Dinner</Button>
+      </FilterContainer>
     </Container>
   </div>;
 };
@@ -47,5 +54,29 @@ align-items: center;
   }
 }
   
+`
+
+const FilterContainer = styled.div`
+display: flex;
+justify-content: center;
+gap: 14px;
   
+
+`
+
+const Button = styled.button`
+        border: unset;
+        border-radius: 5px;
+        background: #FF4343;
+        padding: 6px 12px;
+        cursor: pointer;
+
+        color: #FFF;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+
+  
+
 `
