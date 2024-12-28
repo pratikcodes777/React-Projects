@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {Button} from './styled/Button' ;
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const StartGame = () => {
     const navigate = useNavigate();
