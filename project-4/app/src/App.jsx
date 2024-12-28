@@ -21,11 +21,14 @@ const App = () => {
       setError("Unable to fetch data");
     }
 
-      fetchFoodData();
   };  
+  fetchFoodData();
+
  }, [])
 
  console.log(data)
+
+
 
   if (error) return <div>{error}</div>
   if (loading) return <div>Loading.....</div>
