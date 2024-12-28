@@ -20,7 +20,7 @@ function App() {
     <Router>
     <div className="App">
       <Routes>
-        <Route path="/" element={<StartGame toggle={() => {}} />} />
+        <Route path="/" element={<StartGame />} />
         <Route path="/gameplay" element={<GamePlay />} />
       </Routes>
     </div>

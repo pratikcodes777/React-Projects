@@ -5,9 +5,6 @@ import { useNavigate } from 'react-router-dom';
 const StartGame = () => {
     const navigate = useNavigate();
 
-    const handleStart = () => {
-        navigate('/gameplay'); // Navigate to GamePlay page
-      };
     return ( 
         <Container>
             <div>
@@ -18,7 +15,9 @@ const StartGame = () => {
             <div className="container">
                 <h1>DICE GAME</h1>
                 {/* <Button onClick={toggle}>Play Now</Button> */}
-                <Button onClick={handleStart}>Play Now</Button>
+                <Button onClick={() => {
+                navigate('/gameplay'); // Navigate to GamePlay page
+                }}>Play Now</Button>
                 
             </div>
         </Container>
