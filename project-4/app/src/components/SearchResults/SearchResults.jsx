@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Button } from "../../App";
+import { Button, Container } from "../../App";
 
 const URL = "http://localhost:9000";
 
@@ -7,7 +7,8 @@ const URL = "http://localhost:9000";
 const SearchResults = ({data:foods}) => {
     return ( 
         <FoodCardContainer>
-        <FoodCards>
+       <Container>
+       <FoodCards>
             {
                 foods?.map((food) =>        //this ? tells if there is no data it returns null
                 <FoodCard key={food.name}>
@@ -25,6 +26,7 @@ const SearchResults = ({data:foods}) => {
                 </FoodCard>)
             }
         </FoodCards>
+       </Container>
       </FoodCardContainer>
      );
 }
@@ -38,7 +40,15 @@ const FoodCardContainer = styled.div`
   background-size: cover;
 `;
 
-const FoodCards = styled.div``;
+const FoodCards = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 32px;
+  column-gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+`;
 
 
 const FoodCard = styled.div`
@@ -53,6 +63,7 @@ const FoodCard = styled.div`
 
     display: flex;
     padding: 8px;
+  
 
     .food_info{
       display: flex;

@@ -53,17 +53,19 @@ const App = () => {
           <Button>Lunch</Button>
           <Button>Dinner</Button>
         </FilterContainer>
+    </Container>
+
 
         <SearchResults data={data}></SearchResults>
 
-      </Container>
+      
     </div>
   );
 };
 
 export default App;
 
-const Container = styled.main`
+export const Container = styled.main`
   max-width: 1200px;
   margin: 0 auto;
 `;
