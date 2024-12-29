@@ -31,6 +31,19 @@ const App = () => {
 
  console.log(data)
 
+ const searchFood = (e)=>{
+    const searchValue = e.target.value 
+
+    if (searchValue === ""){
+      setFilteredData(null)
+    }
+    const filter = data?.filter((food)=>
+      food.name.toLowerCase().includes(searchValue.toLowerCase())
+    )
+    setFilteredData(filter)
+    
+ }
+
 
 
   if (error) return <div>{error}</div>
@@ -45,7 +58,7 @@ const App = () => {
           </div>
 
           <div className="search">
-            <input placeholder="Search Food...." type="text" />
+            <input onChange={searchFood} placeholder="Search Food...." type="text" />
           </div>
         </TopContainer>
 
