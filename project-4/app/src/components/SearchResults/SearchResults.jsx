@@ -42,5 +42,37 @@ const FoodCards = styled.div``;
 
 
 const FoodCard = styled.div`
-    
+    border-radius: 20px;
+    border: 0.659px solid #98F9FF;
+    background: url(<path-to-image>) lightgray 0% 0% / 50.8334219455719px 50.8334219455719px repeat, radial-gradient(151.92% 127.02% at 15.32% 21.04%, rgba(165, 239, 255, 0.20) 0%, rgba(110, 191, 244, 0.04) 77.08%, rgba(70, 144, 212, 0.00) 100%);
+    background-blend-mode: overlay, normal;
+    backdrop-filter: blur(13.184196472167969px);
+
+    width: 340px;
+    height: 167px;
+
+    display: flex;
+    padding: 8px;
+
+    .food_info{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: end;
+
+      h3{
+        margin-top: 8px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      p{
+        margin-top: 8px;
+        font-size: 12px;
+      }
+      button{
+        font-size: 12px;
+      }
+    }
+
+
 `
