@@ -97,7 +97,7 @@ const FilterContainer = styled.div`
   margin-bottom: 30px;
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
   border: unset;
   border-radius: 5px;
   background: #ff4343;

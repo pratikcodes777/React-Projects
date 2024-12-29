@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Button } from "../../App";
 
 const URL = "http://localhost:9000";
 
@@ -12,6 +13,14 @@ const SearchResults = ({data:foods}) => {
                 <FoodCard key={food.name}>
                         <div className="food_image">
                           <img src={URL + food.image} alt="image of food" />
+                        </div>
+
+                        <div className="food_info">
+                          <div className="info">
+                            <h3>{food.name}</h3>
+                            <p>{food.text}</p>
+                          </div>
+                  <Button>${food.price.toFixed(2)}</Button>
                         </div>
                 </FoodCard>)
             }
