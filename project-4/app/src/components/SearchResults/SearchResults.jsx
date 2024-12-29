@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+const URL = "http://localhost:9000";
+
+
 const SearchResults = ({data:foods}) => {
     return ( 
         <FoodCardContainer>
@@ -7,7 +10,9 @@ const SearchResults = ({data:foods}) => {
             {
                 foods?.map((food) =>        //this ? tells if there is no data it returns null
                 <FoodCard key={food.name}>
-                        {food.text}
+                        <div className="food_image">
+                          <img src={URL + food.image} alt="image of food" />
+                        </div>
                 </FoodCard>)
             }
         </FoodCards>
