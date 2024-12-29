@@ -8,6 +8,7 @@ const App = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [filteredData, setFilteredData] = useState(null)
 
 
  useEffect(()=>{
@@ -17,6 +18,7 @@ const App = () => {
       const response = await fetch(BASE_URL);
       const json = await response.json();
       setData(json);
+      setFilteredData(json)
       setLoading(false);
     } catch (error) {
       setError("Unable to fetch data");
@@ -56,7 +58,7 @@ const App = () => {
     </Container>
 
 
-        <SearchResults data={data}></SearchResults>
+        <SearchResults data={filteredData}></SearchResults>
 
       
     </div>
