@@ -36,7 +36,7 @@ export default SearchResults;
 
 const FoodCardContainer = styled.div`
   background: url(./bg.png);
-  height: calc(100vh - 202px);
+  min-height: calc(100vh - 202px);
   background-size: cover;
 `;
 
