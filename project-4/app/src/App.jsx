@@ -147,6 +147,10 @@ const TopContainer = styled.div`
       font-family: Inter;
       font-size: 16px;
       font-weight: 400;
+
+      &::placeholder{
+        color: white;
+      }
     }
   }
 
