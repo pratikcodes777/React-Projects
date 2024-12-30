@@ -101,7 +101,9 @@ const App = () => {
         <FilterContainer>
           {
             filterBtns.map((value)=>(
-          <Button key={value.name} onClick={()=>filteredFood(value.type)}>{value.name}</Button>
+          <Button 
+          isSelected = {selectedBtn === value.type}
+          key={value.name} onClick={()=>filteredFood(value.type)}>{value.name}</Button>
 
             ))
           }
@@ -168,7 +170,8 @@ const FilterContainer = styled.div`
 export const Button = styled.button`
   border: unset;
   border-radius: 5px;
-  background: #ff4343;
+  background: ${({isSelected}) => (isSelected ? "#fd7a00" : "#ff4343")};
+  outline: 1px solid ${({isSelected}) => (isSelected ? "white" : "#ff4343")} ;
   padding: 6px 12px;
   cursor: pointer;
 
