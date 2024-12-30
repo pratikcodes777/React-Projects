@@ -9,6 +9,7 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [filteredData, setFilteredData] = useState(null)
+  const [selectedBtn, setSelectedBtn ] = useState("all")
 
 
  useEffect(()=>{
@@ -45,6 +46,25 @@ const App = () => {
  }
 
 
+ const filteredFood = (type) =>{
+  console.log("Button clicked with type:", type);
+  if (type === "all"){
+    setFilteredData(data)
+    setSelectedBtn("all")
+    return
+  }
+
+  const filter = data?.filter((food)=>
+    food.type.toLowerCase().includes(type.toLowerCase())
+  )
+
+  console.log("Filtered Data:", filter);
+
+  setFilteredData(filter)
+  setSelectedBtn(type)
+
+ }
+
 
   if (error) return <div>{error}</div>
   if (loading) return <div>Loading.....</div>
@@ -63,10 +83,10 @@ const App = () => {
         </TopContainer>
 
         <FilterContainer>
-          <Button>All</Button>
-          <Button>Breakfast</Button>
-          <Button>Lunch</Button>
-          <Button>Dinner</Button>
+          <Button onClick={()=>filteredFood("all")}>All</Button>
+          <Button onClick={()=>filteredFood("breakfast")}>Breakfast</Button>
+          <Button onClick={()=>filteredFood("lunch")}>Lunch</Button>
+          <Button onClick={()=>filteredFood("dinner")}>Dinner</Button>
         </FilterContainer>
     </Container>
 
@@ -126,5 +146,9 @@ export const Button = styled.button`
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
+
+  &:hover{
+    background-color: #ff0000;
+  }
 `;
 
