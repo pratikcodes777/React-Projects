@@ -89,8 +89,8 @@ const App = () => {
     <div>
       <Container>
         <TopContainer>
-          <div className="logo">
-            <img src="./logo.svg" alt="" />
+          <div className="logo" onClick={() => window.location.reload()}>
+            <img src="./logo.svg" alt=""  style={{ cursor: "pointer" }}/>
           </div>
 
           <div className="search">
