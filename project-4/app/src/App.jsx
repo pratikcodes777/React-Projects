@@ -45,6 +45,22 @@ const App = () => {
     
  }
 
+ const filterBtns = [
+  {
+    name : "All",
+    type : "all"
+  },  {
+    name : "Breakfast",
+    type : "breakfast"
+  },  {
+    name : "Lunch",
+    type : "lunch"
+  },  {
+    name : "Dinner",
+    type : "dinner"
+  }
+ ]
+
 
  const filteredFood = (type) =>{
   console.log("Button clicked with type:", type);
@@ -83,10 +99,16 @@ const App = () => {
         </TopContainer>
 
         <FilterContainer>
-          <Button onClick={()=>filteredFood("all")}>All</Button>
+          {
+            filterBtns.map((value)=>(
+          <Button key={value.name} onClick={()=>filteredFood(value.type)}>{value.name}</Button>
+
+            ))
+          }
+          {/* <Button onClick={()=>filteredFood("all")}>All</Button>
           <Button onClick={()=>filteredFood("breakfast")}>Breakfast</Button>
           <Button onClick={()=>filteredFood("lunch")}>Lunch</Button>
-          <Button onClick={()=>filteredFood("dinner")}>Dinner</Button>
+          <Button onClick={()=>filteredFood("dinner")}>Dinner</Button> */}
         </FilterContainer>
     </Container>
 
