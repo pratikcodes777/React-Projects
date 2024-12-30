@@ -127,7 +127,7 @@ export const Container = styled.main`
   margin: 0 auto;
 `;
 const TopContainer = styled.div`
-  min-height: 140px;
+  height: 140px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -146,6 +146,15 @@ const TopContainer = styled.div`
       font-size: 16px;
       font-weight: 400;
     }
+  }
+
+  @media (0< width < 600px) {
+    flex-direction: column;
+    height: 120px;
+
+    .search {
+      margin-bottom: 20px;
+  }
   }
 `;
 
