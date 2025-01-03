@@ -3,9 +3,13 @@ import { RiEditCircleLine } from "react-icons/ri";
 import { IoMdTrash } from "react-icons/io";
 import { deleteDoc, doc } from "firebase/firestore";
 import { db } from "../config/firebase";
+import Modals from "./Modals";
+import useDisclosure from "../hooks/useDisclosure";
 
 
 const ContactCard = ({contact}) => {
+
+  const {isOpen, onClose , onOpen} = useDisclosure();
 
   const deleteContact = async(id) =>{
       try {
@@ -16,6 +20,7 @@ const ContactCard = ({contact}) => {
   }
 
     return ( 
+        <>
         <div
             key={contact.id}
             className="flex items-center justify-between rounded-lg bg-yellow p-2"
@@ -33,6 +38,8 @@ const ContactCard = ({contact}) => {
               <IoMdTrash onClick={()=> deleteContact(contact.id)} className="text-orange" />
             </div>
           </div>
+          <Modals onClose={onClose} isOpen={isOpen} />
+        </>
      );
 }
  
