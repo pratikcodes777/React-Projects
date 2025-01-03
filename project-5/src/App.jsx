@@ -4,9 +4,8 @@ import { FaSearch } from "react-icons/fa";
 import { FaPlusCircle } from "react-icons/fa";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "./config/firebase";
-import { FaRegCircleUser } from "react-icons/fa6";
-import { RiEditCircleLine } from "react-icons/ri";
-import { IoMdTrash } from "react-icons/io";
+
+import ContactCard from "./components/ContactCard";
 
 const App = () => {
   const [contacts, setContacts] = useState([]);
@@ -44,25 +43,9 @@ const App = () => {
         <FaPlusCircle className="cursor-pointer text-[40px] text-white" />
       </div>
 
-      <div className="mt-5">
+      <div className="mt-5 flex flex-col gap-3">
         {contacts.map((contact) => (
-          <div
-            key={contact.id}
-            className="flex items-center rounded-lg  justify-around bg-yellow p-2"
-          >
-            <div className="flex gap-2 items-center">
-              <FaRegCircleUser className="text-4xl text-orange" />
-              <div className="">
-                <h2 className="font-medium">{contact.name}</h2>
-                <p className="text-sm">{contact.email}</p>
-              </div>
-            </div>
-
-            <div className="flex text-3xl">
-              <RiEditCircleLine />
-              <IoMdTrash className="text-orange" />
-            </div>
-          </div>
+          <ContactCard key={contact.id} contact={contact} />
         ))}
       </div>
     </div>
