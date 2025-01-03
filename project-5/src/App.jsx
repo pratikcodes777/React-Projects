@@ -1,8 +1,33 @@
+import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import { FaSearch } from "react-icons/fa";
 import { FaPlusCircle } from "react-icons/fa";
+import {collection, getDoc, getDocs} from 'firebase/firestore';
+import {db} from './config/firebase';
 
 const App = () => {
+
+  const [contact, setContact] = useState([])
+
+  useEffect(() =>{
+    const getContacts = async() =>{
+      try {
+        const collectionRef = collection(db , "contacts")
+        const contactsSnapshot = await getDocs(collectionRef)
+        const contactsList = contactsSnapshot.docs.map((doc)=> {
+          return{
+            id : doc.id , 
+            ...doc.data(),
+          }
+        })
+        setContact(contactsList)
+      } catch (error) {
+        
+      }
+    }
+    getContacts()
+  }, [])
+
   return (
     <div className="mx-auto max-w-[370px] px-4">
       <Navbar></Navbar>
