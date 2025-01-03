@@ -4,11 +4,25 @@ import { FaSearch } from "react-icons/fa";
 import { FaPlusCircle } from "react-icons/fa";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "./config/firebase";
+import Modals from "./components/Modals"
+
 
 import ContactCard from "./components/ContactCard";
 
 const App = () => {
   const [contacts, setContacts] = useState([]);
+  const [isOpen , setIsOpen] = useState(false);
+
+  const onOpen = () =>{
+    setIsOpen(true)
+  }
+
+  const onClose = () =>{
+    setIsOpen(false)
+  }
+
+
+
 
   useEffect(() => {
     const getContacts = async () => {
@@ -28,6 +42,7 @@ const App = () => {
   }, []);
 
   return (
+    <>
     <div className="mx-auto max-w-[370px] px-4">
       <Navbar></Navbar>
 
@@ -40,7 +55,7 @@ const App = () => {
             className="h-10 flex-grow rounded-md border border-white bg-transparent pl-9 text-white"
           />
         </div>
-        <FaPlusCircle className="cursor-pointer text-[40px] text-white" />
+        <FaPlusCircle onClick={onOpen} className="cursor-pointer text-[40px] text-white" />
       </div>
 
       <div className="mt-5 flex flex-col gap-3">
@@ -49,6 +64,12 @@ const App = () => {
         ))}
       </div>
     </div>
+        
+        <Modals
+        isOpen={isOpen}
+        onClose={onClose}
+        >Hi</Modals>
+    </>
   );
 };
 
