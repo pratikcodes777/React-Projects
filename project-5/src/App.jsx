@@ -4,10 +4,9 @@ import { FaSearch } from "react-icons/fa";
 import { FaPlusCircle } from "react-icons/fa";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "./config/firebase";
-import Modals from "./components/Modals"
-
-
+import AddAndUpdate from "./components/AddAndUpdate";
 import ContactCard from "./components/ContactCard";
+
 
 const App = () => {
   const [contacts, setContacts] = useState([]);
@@ -65,10 +64,7 @@ const App = () => {
       </div>
     </div>
         
-        <Modals
-        isOpen={isOpen}
-        onClose={onClose}
-        >Hi</Modals>
+       <AddAndUpdate isOpen={isOpen} onClose={onClose} />
     </>
   );
 };

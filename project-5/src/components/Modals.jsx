@@ -13,6 +13,7 @@ const Modals = ({ isOpen, onClose, children }) => {
                 className="cursor-pointer text-3xl"
               />
             </div>
+            {children}
           </div>
           <div
             onClick={onClose}
